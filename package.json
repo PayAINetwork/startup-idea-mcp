@@ -6,7 +6,8 @@
     "scripts": {
         "dev": "tsx --watch index.ts",
         "start": "tsx index.ts",
-        "typecheck": "tsc -p tsconfig.json --noEmit"
+        "typecheck": "tsc -p tsconfig.json --noEmit",
+        "postinstall": "node scripts/patch-mcpay-client.mjs"
     },
     "peerDependencies": {
         "typescript": "^5"
