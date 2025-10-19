@@ -3,7 +3,7 @@ import { Hono } from "hono";
 import { createMcpPaidHandler } from "mcpay/handler";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js";
-import { withX402Client } from "mcpay/client";
+import { withX402Client } from "mcpay/dist/client/with-x402-client.js";
 import { createSigner, isEvmSignerWallet, isSvmSignerWallet, SupportedEVMNetworks, SupportedSVMNetworks } from "x402/types";
 import OpenAI from "openai";
 import { config } from "dotenv";
