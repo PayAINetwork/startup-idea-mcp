@@ -4,29 +4,29 @@
     "type": "module",
     "private": true,
     "scripts": {
-      "dev": "tsx --watch index.ts",
-      "start": "tsx index.ts",
-      "typecheck": "tsc -p tsconfig.json --noEmit"
+        "dev": "tsx --watch index.ts",
+        "start": "tsx index.ts",
+        "typecheck": "tsc -p tsconfig.json --noEmit"
     },
     "peerDependencies": {
-      "typescript": "^5"
+        "typescript": "^5"
     },
     "dependencies": {
-      "@coinbase/x402": "^0.6.3",
-      "@hono/node-server": "^1.19.5",
-      "@modelcontextprotocol/sdk": "^1.18.2",
-      "ai": "^5.0.40",
-      "dotenv": "^17.2.3",
-      "hono": "^4.9.6",
-      "mcp-handler": "^1.0.2",
-      "mcpay": "0.1.7-beta.14",
-      "openai": "^4.76.0",
-      "x402": "^0.6.5",
-      "zod": "3.25.76"
+        "@coinbase/x402": "^0.6.3",
+        "@hono/node-server": "^1.19.5",
+        "@modelcontextprotocol/sdk": "^1.18.2",
+        "ai": "^5.0.40",
+        "dotenv": "^17.2.3",
+        "hono": "^4.9.6",
+        "mcp-handler": "^1.0.2",
+        "mcpay": "^0.1.9",
+        "openai": "^4.76.0",
+        "x402": "^0.6.5",
+        "zod": "3.25.76"
     },
     "devDependencies": {
-      "@types/node": "^20.11.17",
-      "tsx": "^4.19.4",
-      "typescript": "^5.8.3"
+        "@types/node": "^20.11.17",
+        "tsx": "^4.19.4",
+        "typescript": "^5.8.3"
     }
-  }
+}
