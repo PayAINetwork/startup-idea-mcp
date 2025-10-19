@@ -57,12 +57,12 @@ async function getBusinessNewsFromMcp(params: { evmPrivateKey: `0x${string}`; sv
             evm: evmSigner,
             svm: svmSigner,
         },
-        confirmationCallback: async (payment) => {
-            const preferredSvm = payment.find((p) => p.network === "solana-devnet");
+        confirmationCallback: async (payment: any[]) => {
+            const preferredSvm = payment.find((p: any) => p.network === "solana-devnet");
             if (preferredSvm) {
                 return { network: preferredSvm.network as typeof SupportedSVMNetworks[number] };
             }
-            const preferredEvm = payment.find((p) => p.network === "base-sepolia");
+            const preferredEvm = payment.find((p: any) => p.network === "base-sepolia");
             if (preferredEvm) {
                 return { network: preferredEvm.network as typeof SupportedEVMNetworks[number] };
             }
