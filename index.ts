@@ -38,7 +38,7 @@ type NormalizedArticle = {
 
 async function getBusinessNewsFromMcp(params: { evmPrivateKey: `0x${string}`; svmPrivateKey: string }): Promise<unknown> {
     const client = new Client({ name: "startup-idea-mcp-client", version: "1.0.0" });
-    const mcpServerUrl = process.env.BIZNEWS_MCP_SERVER_URL || "http://localhost:3011/mcp";
+    const mcpServerUrl = process.env.BIZNEWS_MCP_SERVER_URL || "";
     const transport = new StreamableHTTPClientTransport(new URL(mcpServerUrl));
     await client.connect(transport);
 
@@ -270,7 +270,7 @@ app.use("*", (c) => {
 
 serve({
     fetch: app.fetch,
-    port: 3022,
+    port: 3011,
 });
 
-console.log("Server is running on port http://localhost:3022");
+console.log("Server is running on port http://localhost:3011");
