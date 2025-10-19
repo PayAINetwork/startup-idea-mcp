@@ -52,7 +52,7 @@ async function getBusinessNewsFromMcp(params: { evmPrivateKey: `0x${string}`; sv
         throw new Error("Failed to create SVM signer");
     }
 
-    const x402Client = withX402Client(client as any, {
+    const x402Client = withX402Client(client, {
         wallet: {
             evm: evmSigner,
             svm: svmSigner,
@@ -270,7 +270,7 @@ app.use("*", (c) => {
 
 serve({
     fetch: app.fetch,
-    port: 3011,
+    port: 3022,
 });
 
-console.log("Server is running on port http://localhost:3011");
+console.log("Server is running on port http://localhost:3022");
