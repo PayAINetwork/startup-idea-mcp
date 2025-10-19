@@ -52,7 +52,7 @@ async function getBusinessNewsFromMcp(params: { evmPrivateKey: `0x${string}`; sv
         throw new Error("Failed to create SVM signer");
     }
 
-    const x402Client = withX402Client(client, {
+    const x402Client = withX402Client(client as Client, {
         wallet: {
             evm: evmSigner,
             svm: svmSigner,
