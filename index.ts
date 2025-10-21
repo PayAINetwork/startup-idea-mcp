@@ -178,7 +178,7 @@ const handler = createMcpPaidHandler(
         server.paidTool(
             "idea_of_the_day",
             "Generate a startup idea of the day from latest business news",
-            "$0.50",
+            "$0.25",
             {},
             {},
             async () => {
@@ -242,8 +242,8 @@ const handler = createMcpPaidHandler(
             url: process.env.FACILITATOR_URL as `${string}://${string}`
         },
         recipient: {
-            "evm": {address: process.env.EVM_RECIPIENT_ADDRESS as string, isTestnet: true},
-            "svm": {address: process.env.SVM_RECIPIENT_ADDRESS as string, isTestnet: true}
+            "evm": {address: process.env.EVM_RECIPIENT_ADDRESS as string, isTestnet: false},
+            "svm": {address: process.env.SVM_RECIPIENT_ADDRESS as string, isTestnet: false}
         }
     },
     {
