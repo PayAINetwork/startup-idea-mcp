@@ -243,7 +243,7 @@ const handler = createMcpPaidHandler(
         },
         recipient: {
             "evm": {address: process.env.EVM_RECIPIENT_ADDRESS as string, isTestnet: false},
-            "svm": {address: process.env.SVM_RECIPIENT_ADDRESS as string, isTestnet: false}
+            // "svm": {address: process.env.SVM_RECIPIENT_ADDRESS as string, isTestnet: false}
         }
     },
     {
