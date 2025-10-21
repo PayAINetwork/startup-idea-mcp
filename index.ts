@@ -42,12 +42,12 @@ async function getBusinessNewsFromMcp(params: { evmPrivateKey: `0x${string}`; sv
     const transport = new StreamableHTTPClientTransport(new URL(mcpServerUrl));
     await client.connect(transport);
 
-    const evmSigner = await createSigner("base-sepolia", params.evmPrivateKey);
+    const evmSigner = await createSigner("base", params.evmPrivateKey);
     if (!isEvmSignerWallet(evmSigner)) {
         throw new Error("Failed to create EVM signer");
     }
 
-    const svmSigner = await createSigner("solana-devnet", params.svmPrivateKey);
+    const svmSigner = await createSigner("solana", params.svmPrivateKey);
     if (!isSvmSignerWallet(svmSigner)) {
         throw new Error("Failed to create SVM signer");
     }
@@ -58,11 +58,11 @@ async function getBusinessNewsFromMcp(params: { evmPrivateKey: `0x${string}`; sv
             svm: svmSigner,
         },
         confirmationCallback: async (payment: any[]) => {
-            const preferredSvm = payment.find((p: any) => p.network === "solana-devnet");
+            const preferredSvm = payment.find((p: any) => p.network === "solana");
             if (preferredSvm) {
                 return { network: preferredSvm.network as typeof SupportedSVMNetworks[number] };
             }
-            const preferredEvm = payment.find((p: any) => p.network === "base-sepolia");
+            const preferredEvm = payment.find((p: any) => p.network === "base");
             if (preferredEvm) {
                 return { network: preferredEvm.network as typeof SupportedEVMNetworks[number] };
             }
